@@ -6,7 +6,7 @@
 
     lerna pnpm-worspace qiankun
 
-# ppnm
+# pnpm 安装依赖
 
     pnpm add @craco/craco -D
     pnpm add @craco/craco -C ./packages/sub-react
@@ -24,3 +24,7 @@
 
     1.当创建多个微应用时，public下index.html的id尽量不要重复，相关id修改后，要同步修改src文件下index.js中render函数内部的querySelector函数及getElementById函数所传值。
     2.微应用src文件下index.js中的<BrowserRouter basename={window.__POWERED_BY_QIANKUN__ ? "/react-micro1" : "/"}>标签内，"/react-micro1"要与主应用activeRule的值一致，否则会找不到路径。
+
+# 解决问题
+
+    解决子应用是vue3 vite 版本，切换路由时卸载应用不成功，导致第二次不加载页面的问题。
