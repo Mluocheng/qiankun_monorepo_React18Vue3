@@ -2,14 +2,21 @@
 
 `@umijs/max` 模板项目，更多功能参考 [Umi Max 简介](https://umijs.org/docs/max/introduce)
 
+# 启动
+
+    pnpm i
+    pnpm start 启动主应用
+    pnpm start-subReact 启动子应用
+    pnpm start-subVue 启动子应用
+
 # 知识点
 
     lerna pnpm-worspace qiankun
 
 # pnpm 安装依赖
 
-    pnpm add @craco/craco -D
-    pnpm add @craco/craco -C ./packages/sub-react
+    pnpm add @craco/craco -W 安装整个项目全局依赖
+    pnpm add @craco/craco -C ./packages/sub-react 给某个子包安装依赖
 
 # 子应用
 
