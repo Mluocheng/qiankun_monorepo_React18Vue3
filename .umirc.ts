@@ -8,16 +8,19 @@ export default defineConfig({
   request: {},
   layout: {
     title: '@umijs/max',
+    // menubar:false
   },
   routes: [
     {
       path: '/',
       redirect: '/home',
+      menuRender: false,
     },
     {
       name: '首页',
       path: '/home',
       component: './Home',
+      menuRender: false,
     },
     {
       name: '权限演示',
@@ -28,19 +31,32 @@ export default defineConfig({
       name: ' CRUD 示例',
       path: '/table',
       component: './Table',
+
     },
     {
       path: '/app1',
-      microApp: 'app1'
+      microApp: 'app1',
+      menuRender: false,
     },
     {
       path: '/app2',
-      microApp: 'app2'
+      microApp: 'app2',
+      menuRender: false,
     },
-    // {
-    //   path: '/app3',
-    //   microApp: 'app3'
-    // },
+    {
+      path: '/app3',
+      microApp: 'app3',
+      menuRender: false,
+      // flatMenu: true,
+      routes: [
+        {
+          path: '/app3/home',
+        },
+        {
+          path: '/app3/about',
+        }
+      ]
+    },
   ],
   npmClient: 'pnpm',
   qiankun: {
@@ -63,14 +79,14 @@ export default defineConfig({
             data: { aaa: '主应用传给挨app2子应用的数据' }
           }
         },
-        // {
-        //   name: 'app3', // 唯一 id
-        //   entry: '//localhost:7105', // html entry
-        //   container: '#app3',  // 和app.vue配置的节点一致
-        //   props: {
-        //     data: { aaa: '主应用传给挨app2子应用的数据' }
-        //   }
-        // },
+        {
+          name: 'app3', // 唯一 id
+          entry: '//localhost:7105', // html entry
+          container: '#app3',  // 和app.vue配置的节点一致
+          props: {
+            data: { aaa: '主应用传给挨app2子应用的数据' }
+          }
+        },
       ],
     },
   },

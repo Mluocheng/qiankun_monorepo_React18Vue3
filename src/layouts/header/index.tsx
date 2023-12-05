@@ -8,7 +8,7 @@ export default function Index() {
       <div className={css.link}><Link to="/home">首页</Link></div>
       <div className={css.link}><Link to="/app1">项目</Link></div>
       <div className={css.link}><Link to="/app2">财务</Link></div>
-      {/* <div className={css.link}><Link to="/app3">app3</Link></div> */}
+      <div className={css.link}><Link to="/app3">app3</Link></div>
     </div>
   );
 }
