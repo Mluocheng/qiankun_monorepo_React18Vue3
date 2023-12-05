@@ -1,33 +1,58 @@
 <template>
   <div id="app">
-    <div id="nav">
-      vue3
-      <!-- <router-link to="/vue3/home">Home</router-link> | -->
-      <!-- <router-link to="/about">About</router-link> -->
+    <div class="header">vue3 header</div>
+    <div class="body">
+      <div class="left" v-show="!isQianKun">
+        <router-link to="/home">Home</router-link>
+        <router-link to="/about">About</router-link>
+      </div>
+      <div class="content">
+        <router-view />
+      </div>
     </div>
-    <router-view/>
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
 
-#nav {
-  padding: 30px;
+export default {
+  name: 'App',
+  components: {
+  
+  },
+  created() {
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+  },
+  mounted() {
+   
+  },
+  methods: {
 
-    &.router-link-exact-active {
-      color: #42b983;
+  },
+  computed: {
+    isQianKun() {
+      return window?.__POWERED_BY_QIANKUN__ || false
     }
   }
+};
+</script>
+
+<style lang="less">
+.header{
+  text-align: center;
+}
+.body{
+  margin-top: 20px;
+  display: flex;
+  padding: 20px;
+}
+.left{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.content{
+  width: 100%;
+  text-align: center;
 }
 </style>

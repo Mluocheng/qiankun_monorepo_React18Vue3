@@ -10,7 +10,8 @@
     "setup": "max setup",
     "start": "npm run dev",
     "start-subReact": "cd packages/sub-react && pnpm start",
-    "start-subVue": "cd packages/sub-vue && pnpm vite"
+    "start-subVue": "cd packages/sub-vue && pnpm vite",
+    "start-vue3": "cd packages/vue3 && pnpm start"
   },
   "dependencies": {
     "@ant-design/icons": "5.2.6",
